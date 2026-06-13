@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al-Nomaad · Madinah Al-Munawwarah</title>
+  <meta name="description" content="Hijrah facilitation and guided Madinah experiences for British Muslims — from someone who lives there." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────────────────────── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --cream:#faf7f2;--cream-d:#f2ece0;--cream-dd:#e8e0d0;
+      --green:#1c3829;--green-m:#2a5240;--green-l:#3d7a5c;
+      --gold:#b8936a;--gold-l:#d4ad88;--gold-d:#9a7550;
+      --text:#2c2c2c;--soft:#6b6355;--border:#ddd5c4;--white:#fff;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* ── Type ──────────────────────────────────────────────────────── */
+    h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.2}
+    .label{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .label-light{color:var(--gold-l)}
+
+    /* ── Layout ────────────────────────────────────────────────────── */
+    .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+    .wrap--sm{max-width:680px;margin:0 auto;padding:0 32px}
+    section{padding:96px 0}
+
+    .sec-head{text-align:center;max-width:600px;margin:0 auto 60px}
+    .sec-head .label{display:block;margin-bottom:14px}
+    .sec-head h2{font-size:clamp(26px,3.8vw,40px);color:var(--green);margin-bottom:16px}
+    .sec-head p{color:var(--soft);font-size:16.5px}
+
+    /* ── Buttons ───────────────────────────────────────────────────── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:4px;font-size:14px;font-weight:500;transition:all .2s;letter-spacing:.01em}
+    .btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:var(--gold-l);transform:translateY(-1px)}
+    .btn-green{background:var(--green);color:var(--cream)}.btn-green:hover{background:var(--green-m)}
+    .btn-outline-cream{border:1px solid rgba(250,247,242,.3);color:rgba(250,247,242,.8)}.btn-outline-cream:hover{border-color:var(--cream);color:var(--cream)}
+    .btn-outline-green{border:1px solid var(--border);color:var(--soft)}.btn-outline-green:hover{border-color:var(--green);color:var(--green)}
+
+    /* ── Nav ───────────────────────────────────────────────────────── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(250,247,242,.93);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+    .nav.sc{border-color:var(--border)}
+    .logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--green)}.logo span{color:var(--gold)}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{font-size:13.5px;color:var(--soft);transition:color .2s}.nav-links a:hover{color:var(--green)}
+    .nav-cta{background:var(--green)!important;color:var(--cream)!important;padding:9px 20px;border-radius:4px}
+    .nav-cta:hover{background:var(--green-m)!important}
+    .mob-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .mob-btn span{display:block;width:22px;height:1.5px;background:var(--green)}
+
+    /* ── Hero ──────────────────────────────────────────────────────── */
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:var(--green);padding:108px 0 72px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 85%,rgba(184,147,106,.14) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(255,255,255,.04) 0%,transparent 55%);pointer-events:none}
+    /* Dome SVG decoration */
+    .hero-dome{position:absolute;right:-80px;bottom:-40px;opacity:.04;pointer-events:none;width:600px}
+
+    .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:center}
+    .hero .label{display:block;margin-bottom:20px}
+    .hero h1{font-size:clamp(36px,5.2vw,60px);color:var(--cream);line-height:1.12;margin-bottom:24px}
+    .hero h1 em{font-style:italic;color:var(--gold-l)}
+    .hero p{font-size:17px;color:rgba(250,247,242,.65);max-width:440px;margin-bottom:36px;line-height:1.8}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+    /* Floating card */
+    .hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:36px;backdrop-filter:blur(8px)}
+    .hero-card blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--cream);line-height:1.6;margin-bottom:24px}
+    .hero-card-who{display:flex;align-items:center;gap:12px}
+    .avatar{width:44px;height:44px;border-radius:50%;background:var(--green-m);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);font-weight:600;flex-shrink:0}
+    .avatar-name{font-size:13.5px;color:var(--cream);font-weight:500}
+    .avatar-role{font-size:12px;color:rgba(250,247,242,.45)}
+
+    /* Scroll indicator */
+    .scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(250,247,242,.35);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(250,247,242,.35),transparent);animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
+
+    /* ── Strip ─────────────────────────────────────────────────────── */
+    .strip{background:var(--gold);padding:16px 32px;text-align:center}
+    .strip p{color:#fff;font-size:13.5px}
+    .strip strong{font-weight:500}
+
+    /* ── Two Paths ─────────────────────────────────────────────────── */
+    .paths{background:var(--cream-d)}
+    .paths-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+    .path-card{background:var(--white);padding:52px 44px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden}
+    .path-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border);transition:background .3s}
+    .path-card:hover::after{background:var(--gold)}
+    .path-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+    .path-icon-green{background:var(--green)}
+    .path-icon-gold{background:var(--gold)}
+    .path-icon svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.6}
+    .path-card h3{font-size:24px;color:var(--green);line-height:1.25}
+    .path-card p{font-size:15px;color:var(--soft);line-height:1.75;flex:1}
+    .path-arrow{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:var(--gold);font-weight:500;margin-top:auto}
+    .path-arrow svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+    .path-card:hover .path-arrow svg{transform:translateX(4px)}
+
+    /* ── Story ─────────────────────────────────────────────────────── */
+    .story{background:var(--cream)}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .story .label{display:block;margin-bottom:16px}
+    .story h2{font-size:clamp(26px,3.5vw,38px);color:var(--green);margin-bottom:22px}
+    .story p{font-size:16px;color:var(--soft);margin-bottom:18px;line-height:1.8}
+    .story p:last-child{margin-bottom:0}
+    .story p strong{color:var(--text);font-weight:500}
+    .story-panel{background:var(--green);border-radius:14px;padding:44px}
+    .story-panel h3{font-size:20px;color:var(--cream);margin-bottom:14px;line-height:1.3}
+    .story-panel p{font-size:14.5px;color:rgba(250,247,242,.65);line-height:1.8}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+    .stat{background:rgba(255,255,255,.06);border-radius:8px;padding:18px}
+    .stat-n{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold-l);line-height:1;margin-bottom:4px}
+    .stat-l{font-size:12.5px;color:rgba(250,247,242,.5)}
+
+    /* ── Who For ───────────────────────────────────────────────────── */
+    .who{background:var(--cream-d)}
+    .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .who-card{background:var(--white);padding:40px 32px;border-top:3px solid var(--cream-dd);transition:border-color .3s}
+    .who-card:hover{border-color:var(--gold)}
+    .who-n{font-family:'Playfair Display',serif;font-size:12px;color:var(--gold);margin-bottom:16px;letter-spacing:.08em}
+    .who-card h3{font-size:19px;color:var(--green);margin-bottom:12px;line-height:1.3}
+    .who-card p{font-size:14.5px;color:var(--soft);line-height:1.75}
+
+    /* ── Packages ──────────────────────────────────────────────────── */
+    .packages{background:var(--green);position:relative;overflow:hidden}
+    .packages::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 100%,rgba(184,147,106,.07) 0%,transparent 55%);pointer-events:none}
+    .packages .sec-head h2{color:var(--cream)}
+    .packages .sec-head p{color:rgba(250,247,242,.55)}
+    .packages .label{color:var(--gold-l)}
+
+    .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pkg{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:40px 32px;display:flex;flex-direction:column;transition:border-color .3s,background .3s}
+    .pkg:hover{border-color:rgba(184,147,106,.35);background:rgba(255,255,255,.07)}
+    .pkg.feat{border-color:var(--gold);background:rgba(184,147,106,.09);position:relative}
+    .feat-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
+    .pkg-tier{font-size:10.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-l);margin-bottom:8px}
+    .pkg-name{font-family:'Playfair Display',serif;font-size:22px;color:var(--cream);margin-bottom:6px}
+    .pkg-sub{font-size:13.5px;color:rgba(250,247,242,.45);margin-bottom:24px;line-height:1.55;font-style:italic}
+    .pkg-price{font-family:'Playfair Display',serif;font-size:36px;color:var(--cream);line-height:1;margin-bottom:4px}
+    .pkg-price-note{font-size:12.5px;color:rgba(250,247,242,.35);margin-bottom:28px}
+    .pkg-divider{height:1px;background:rgba(255,255,255,.09);margin-bottom:22px}
+    .pkg-inc-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,247,242,.35);margin-bottom:12px}
+    .pkg-list{list-style:none;flex:1;margin-bottom:24px}
+    .pkg-list li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:rgba(250,247,242,.65);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);line-height:1.5}
+    .pkg-list li:last-child{border-bottom:none}
+    .pkg-list li::before{content:'✦';color:var(--gold);font-size:8px;margin-top:5px;flex-shrink:0}
+
+    .pkg-btn{display:block;text-align:center;padding:13px;border-radius:6px;font-size:13.5px;font-weight:500;transition:all .2s;margin-top:auto}
+    .pkg-btn-ol{border:1px solid rgba(255,255,255,.18);color:var(--cream)}.pkg-btn-ol:hover{border-color:var(--gold);color:var(--gold-l)}
+    .pkg-btn-solid{background:var(--gold);color:#fff}.pkg-btn-solid:hover{background:var(--gold-l)}
+
+    /* ── Tours ─────────────────────────────────────────────────────── */
+    .tours{background:var(--cream-d)}
+    .tours-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+    .tours-header .label{display:block;margin-bottom:14px}
+    .tours-header h2{font-size:clamp(26px,3.8vw,42px);color:var(--green);line-height:1.15}
+    .tours-header p{font-size:15.5px;color:var(--soft);line-height:1.8}
+    .tours-header .price-tag{display:inline-flex;align-items:baseline;gap:8px;margin-top:20px}
+    .tours-header .price-big{font-family:'Playfair Display',serif;font-size:38px;color:var(--green)}
+    .tours-header .price-note{font-size:13.5px;color:var(--soft)}
+
+    .days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:48px}
+    .day{background:var(--white);border-radius:10px;padding:20px 14px;border:1px solid var(--border);transition:border-color .3s,box-shadow .3s}
+    .day:hover{border-color:var(--green);box-shadow:0 4px 20px rgba(28,56,41,.1)}
+    .day-num{font-family:'Playfair Display',serif;font-size:12px;color:var(--gold);margin-bottom:10px;letter-spacing:.08em}
+    .day h5{font-size:13.5px;color:var(--green);margin-bottom:6px;line-height:1.3}
+    .day p{font-size:12px;color:var(--soft);line-height:1.6}
+
+    .tours-includes{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+    .inc-block{background:var(--white);border-radius:12px;padding:36px;border:1px solid var(--border)}
+    .inc-block h4{font-size:16px;color:var(--green);margin-bottom:20px}
+    .inc-list{list-style:none}
+    .inc-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--soft);padding:8px 0;border-bottom:1px solid var(--border)}
+    .inc-list li:last-child{border-bottom:none}
+    .inc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+    .ind-services{margin-top:64px}
+    .ind-services h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--green);margin-bottom:6px}
+    .ind-services>p{font-size:15px;color:var(--soft);margin-bottom:32px}
+
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .svc-card{background:var(--white);border-radius:10px;padding:24px;border:1px solid var(--border);transition:border-color .3s}
+    .svc-card:hover{border-color:var(--green)}
+    .svc-cat{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+    .svc-name{font-size:14.5px;color:var(--text);font-weight:500;margin-bottom:4px}
+    .svc-desc{font-size:12.5px;color:var(--soft);margin-bottom:12px;line-height:1.6}
+    .svc-price{font-family:'Playfair Display',serif;font-size:20px;color:var(--green)}
+
+    /* ── Al-Nomaad Services ────────────────────────────────────────── */
+    .an-services{background:var(--cream)}
+    .tabs{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+    .tab{background:transparent;border:1px solid var(--border);color:var(--soft);padding:8px 18px;border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s}
+    .tab.on,.tab:hover{background:var(--green);border-color:var(--green);color:var(--cream)}
+    .tbl-wrap{background:var(--white);border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .tsec{display:none}.tsec.on{display:block}
+    table{width:100%;border-collapse:collapse}
+    thead{background:var(--green)}
+    th{padding:14px 22px;text-align:left;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--cream)}
+    th:last-child{text-align:right}
+    td{padding:16px 22px;border-bottom:1px solid var(--border);font-size:14.5px;vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:#faf7f2}
+    td:first-child{font-weight:500;color:var(--text)}
+    td:nth-child(2){color:var(--soft);font-size:13.5px}
+    td:last-child{text-align:right;white-space:nowrap;font-family:'Playfair Display',serif;font-size:16.5px;color:var(--green)}
+    .tbl-note{padding:16px 22px;font-size:13px;color:var(--soft);background:var(--cream);border-top:1px solid var(--border)}
+
+    /* ── About ─────────────────────────────────────────────────────── */
+    .about{background:var(--cream-d)}
+    .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:center}
+    .about-card{background:var(--green);border-radius:14px;padding:44px}
+    .about-name{font-family:'Playfair Display',serif;font-size:26px;color:var(--cream);margin-bottom:4px}
+    .about-role{font-size:13px;color:var(--gold-l);margin-bottom:24px}
+    .about-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:17.5px;color:rgba(250,247,242,.82);line-height:1.65;border-left:2px solid var(--gold);padding-left:18px}
+    .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+    .cred{background:rgba(255,255,255,.06);border-radius:8px;padding:15px;font-size:12.5px;color:rgba(250,247,242,.6);line-height:1.5}
+    .cred span{display:block;font-size:17px;margin-bottom:6px}
+    .about .label{display:block;margin-bottom:14px}
+    .about h2{font-size:clamp(24px,3.2vw,36px);color:var(--green);margin-bottom:20px;line-height:1.25}
+    .about p{font-size:16px;color:var(--soft);margin-bottom:18px;line-height:1.8}
+    .about p:last-of-type{margin-bottom:0}
+    .about p strong{color:var(--text);font-weight:500}
+
+    /* ── Process ───────────────────────────────────────────────────── */
+    .process{background:var(--cream)}
+    .process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .proc{background:var(--white);border-radius:10px;padding:32px;border:1px solid var(--border)}
+    .proc-n{font-family:'Playfair Display',serif;font-size:40px;color:var(--cream-dd);line-height:1;margin-bottom:16px}
+    .proc h4{font-size:17px;color:var(--green);margin-bottom:10px}
+    .proc p{font-size:14px;color:var(--soft);line-height:1.75}
+
+    /* ── FAQ ───────────────────────────────────────────────────────── */
+    .faq{background:var(--cream-d)}
+    .faq-list{max-width:680px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-size:15.5px;color:var(--green);font-weight:500;gap:20px}
+    .faq-ico{width:18px;height:18px;flex-shrink:0;position:relative}
+    .faq-ico::before,.faq-ico::after{content:'';position:absolute;background:var(--gold);transition:transform .3s,opacity .3s}
+    .faq-ico::before{width:12px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .faq-ico::after{width:1px;height:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .faq-item.open .faq-ico::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-item.open .faq-a{max-height:300px}
+    .faq-a p{padding-bottom:20px;font-size:14.5px;color:var(--soft);line-height:1.8}
+
+    /* ── CTA ───────────────────────────────────────────────────────── */
+    .cta{background:var(--gold);padding:72px 0;text-align:center}
+    .cta h2{font-size:clamp(26px,4vw,42px);color:#fff;margin-bottom:16px}
+    .cta p{font-size:16.5px;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 36px;line-height:1.7}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn-white{background:#fff;color:var(--gold);padding:13px 30px;border-radius:4px;font-size:14px;font-weight:500;transition:all .2s}.btn-white:hover{background:var(--cream);transform:translateY(-1px)}
+    .btn-ghost-w{border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.85);padding:13px 24px;border-radius:4px;font-size:14px;transition:all .2s}.btn-ghost-w:hover{border-color:#fff;color:#fff}
+
+    /* ── Footer ────────────────────────────────────────────────────── */
+    footer{background:var(--green);padding:52px 0 32px}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+    .ft-brand .logo{display:block;color:var(--cream);font-size:21px;margin-bottom:14px}
+    .ft-brand p{font-size:13.5px;color:rgba(250,247,242,.5);max-width:260px;line-height:1.7}
+    .ft-contact{margin-top:18px;font-size:13.5px;color:rgba(250,247,242,.5)}
+    .ft-contact a{color:var(--gold-l);transition:color .2s}.ft-contact a:hover{color:var(--gold)}
+    .ft-col h5{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin-bottom:16px}
+    .ft-col ul{list-style:none}
+    .ft-col ul li{margin-bottom:8px}
+    .ft-col ul li a{font-size:13.5px;color:rgba(250,247,242,.5);transition:color .2s}.ft-col ul li a:hover{color:var(--gold-l)}
+    .ft-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;font-size:12.5px;color:rgba(250,247,242,.35)}
+
+    /* ── Scroll fade ───────────────────────────────────────────────── */
+    .fu{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+    .fu.vis{opacity:1;transform:none}
+    .fu:nth-child(2){transition-delay:.08s}.fu:nth-child(3){transition-delay:.16s}.fu:nth-child(4){transition-delay:.24s}.fu:nth-child(5){transition-delay:.32s}.fu:nth-child(6){transition-delay:.40s}.fu:nth-child(7){transition-delay:.48s}
+
+    /* ── Mobile ────────────────────────────────────────────────────── */
+    @media(max-width:1024px){
+      .ft-grid{grid-template-columns:1fr 1fr;gap:36px}
+      .hero-inner{gap:44px}
+      .story-grid,.about-grid{gap:48px}
+      .tours-header{gap:48px}
+    }
+    @media(max-width:768px){
+      section{padding:68px 0}
+      .wrap,.wrap--sm{padding:0 20px}
+      .nav-links{display:none}
+      .mob-btn{display:flex}
+      .nav-links.mo{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:var(--cream);padding:20px;border-bottom:1px solid var(--border);gap:0}
+      .nav-links.mo li{border-bottom:1px solid var(--border)}
+      .nav-links.mo a{display:block;padding:13px 0;font-size:15px}
+      .nav-links.mo .nav-cta{margin-top:14px;display:block;text-align:center;padding:13px;border-radius:6px}
+      .hero-inner{grid-template-columns:1fr}.hero-card{display:none}.scroll-cue{display:none}
+      .paths-grid,.story-grid,.who-grid,.pkg-grid,.about-grid,.process-steps,.tours-includes{grid-template-columns:1fr}
+      .days-grid{grid-template-columns:repeat(3,1fr) !important}
+      .svc-grid{grid-template-columns:1fr 1fr}
+      .tours-header{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+      .ft-grid{grid-template-columns:1fr;gap:28px}
+      .ft-bottom{flex-direction:column;gap:8px;text-align:center}
+      .cta-btns{flex-direction:column;align-items:center}
+      th:nth-child(2),td:nth-child(2){display:none}
+    }
+    @media(max-width:480px){
+      .days-grid{grid-template-columns:1fr 1fr !important}
+      .svc-grid{grid-template-columns:1fr}
+      .cred-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="#" class="logo">Al-Nomaad<span>.</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#paths">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#consultation-cta" class="nav-cta" style="background:var(--gold);color:#fff;padding:9px 20px;border-radius:4px;font-weight:500;transition:all .2s;display:inline-block" onmouseover="this.style.background='#d4ad88'" onmouseout="this.style.background='var(--gold)'">Book a Consultation</a></li>
+  </ul>
+  <div class="mob-btn" id="mob-btn"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <!-- Dome decoration -->
+  <svg class="hero-dome" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="250" cy="400" rx="230" ry="40" stroke="white" stroke-width="1.5"/>
+    <path d="M80 400 Q80 200 250 80 Q420 200 420 400" stroke="white" stroke-width="1.5" fill="none"/>
+    <path d="M130 400 Q130 220 250 120 Q370 220 370 400" stroke="white" stroke-width="1.5" fill="none"/>
+    <rect x="235" y="20" width="30" height="60" rx="4" stroke="white" stroke-width="1.5" fill="none"/>
+    <polygon points="250,0 240,20 260,20" stroke="white" stroke-width="1" fill="none"/>
+    <line x1="250" y1="0" x2="250" y2="-15" stroke="white" stroke-width="1.5"/>
+    <circle cx="250" cy="-18" r="3" stroke="white" stroke-width="1" fill="none"/>
+    <path d="M200 400 Q200 240 250 160 Q300 240 300 400" stroke="white" stroke-width="1" fill="none"/>
+    <line x1="80" y1="400" x2="420" y2="400" stroke="white" stroke-width="1.5"/>
+    <rect x="160" y="355" width="180" height="45" rx="0" stroke="white" stroke-width="1.5" fill="none"/>
+    <rect x="210" y="320" width="80" height="80" rx="0" stroke="white" stroke-width="1" fill="none"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="label label-light">Hijrah Facilitation · Madinah Al-Munawwarah</span>
+        <h1>The move is not a dream. <em>It is a decision.</em></h1>
+        <p>Al-Nomaad guides Muslims living in the West through every step of relocating to Madinah — from the first question to the day you are settled. Built on 7 years of living and travelling across Muslim countries.</p>
+        <div class="hero-btns">
+          <a href="https://instagram.com/alnomaad" class="btn btn-gold" target="_blank" rel="noopener">
+            Begin your journey
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#paths" class="btn btn-outline-cream">See how it works</a>
+        </div>
+      </div>
+      <div class="hero-card" id="consultation-cta">
+        <div style="font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l);margin-bottom:14px">Ready to take the next step?</div>
+        <div style="font-family:'Playfair Display',serif;font-size:21px;color:var(--cream);line-height:1.35;margin-bottom:8px">Book a consultation.<br><em style="font-size:17px;color:rgba(250,247,242,.65)">Start where you are.</em></div>
+        <p style="font-size:13.5px;color:rgba(250,247,242,.55);margin-bottom:24px;line-height:1.7">A focused session with someone who has lived this — not theory, not a script. Real answers for where you actually are in the journey.</p>
+        <div style="margin-top:12px;text-align:center;font-size:12px;color:rgba(250,247,242,.35)">DM MOVE · @alnomaad on Instagram</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ── Strip ─────────────────────────────────────────────────────── -->
+<div class="strip">
+  <p><strong>One consultancy. One city.</strong> &nbsp;Permanently based in Madinah — responding to every enquiry within 2 hours.</p>
+</div>
+
+<!-- ── Two Paths ─────────────────────────────────────────────────── -->
+<section class="paths" id="paths">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Two Ways to Work with Al-Nomaad</span>
+      <h2>Making the move — or experiencing the city first?</h2>
+      <p>Al-Nomaad covers hijrah facilitation in full. For those visiting Madinah, Nomaad Tours handles the experience separately.</p>
+    </div>
+    <div class="paths-grid">
+      <a href="#packages" class="path-card fu">
+        <div class="path-icon path-icon-green">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Hijrah Facilitation</h3>
+        <p>You are considering or planning the move to Madinah. Al-Nomaad takes you from the first question to the day you are settled — consultations, property scouting, Iqama facilitation, and full on-ground setup.</p>
+        <div class="path-arrow">Al-Nomaad packages <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="https://nomaadtours.com" class="path-card fu" target="_blank" rel="noopener">
+        <div class="path-icon path-icon-gold">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Nomaad Tours</h3>
+        <p>Visiting Madinah and want the experience done properly? Nomaad Tours is a separate brand offering private, resident-led experiences in the city — sacred sites, Umrah guidance, and every detail handled.</p>
+        <div class="path-arrow">Visit Nomaad Tours <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Story ─────────────────────────────────────────────────────── -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div>
+        <span class="label">The Foundation</span>
+        <h2>Seven years of experience in Madinah — so you avoid the mistakes that come with figuring it out alone.</h2>
+        <p>The path to hijrah is full of failed attempts, costly detours, and bad decisions made without the right information. Al-Nomaad was built on years of constant travel, planning, and eventually making the move — so that everything learned along the way becomes your shortcut.</p>
+        <p>This is on-ground knowledge built over 7 years — which neighbourhoods suit families, <strong>which properties to avoid,</strong> and what the first year actually looks like. Not a guide written from abroad. Guidance from inside the city.</p>
+        <p>The mistakes have already been made. You do not have to make them again.</p>
+      </div>
+      <div class="story-panel">
+        <h3>Wherever you are in the journey, there is a clear next step.</h3>
+        <p>Whether you need clarity before committing, a full plan for the next few months, or complete end-to-end support — there is a package built for exactly where you are.</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-n">3</div><div class="stat-l">Structured packages from clarity to full landing</div></div>
+          <div class="stat"><div class="stat-n">1</div><div class="stat-l">Person you work with, start to finish</div></div>
+          <div class="stat"><div class="stat-n">24h</div><div class="stat-l">WhatsApp response once you're enrolled</div></div>
+          <div class="stat"><div class="stat-n">6mo</div><div class="stat-l">Ongoing monthly check-ins for Tier 3</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Who For ────────────────────────────────────────────────────── -->
+<section class="who" id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Who This Is For</span>
+      <h2 style="font-size:clamp(32px,5vw,52px)">Who is this for?</h2>
+      <p>Three stages. One service. Pick the one that sounds like you.</p>
+    </div>
+    <div class="who-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;cursor:pointer">
+
+      <div class="who-card fu" onclick="toggleWho(this)" style="border-radius:12px;border:2px solid var(--cream-dd);padding:36px 28px;background:var(--white);transition:all .3s;position:relative;overflow:hidden">
+        <div class="who-n" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">01 — Considering</div>
+        <h3 style="font-size:18px;color:var(--green);margin-bottom:12px;line-height:1.35">You have been thinking about it for years. You have not committed yet.</h3>
+        <p style="font-size:14px;color:var(--soft);line-height:1.75;margin-bottom:0">You need honest answers — on finances, on lifestyle, on whether Madinah is genuinely right for your situation. Not a pitch. A real conversation.</p>
+        <div class="who-expand" style="max-height:0;overflow:hidden;transition:max-height .35s ease">
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+            <div style="font-size:12.5px;color:var(--gold);font-weight:500;margin-bottom:8px">Best starting point</div>
+            <div style="font-size:13.5px;color:var(--soft);line-height:1.7">The Hijrah Compass — 4 sessions, one month, clarity on your situation from someone already in Madinah.</div>
+            <a href="#packages" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--green);font-weight:500;text-decoration:underline;text-underline-offset:3px">See the package →</a>
+          </div>
+        </div>
+        <div style="margin-top:16px;font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.04em">Tap to see what fits ↓</div>
+      </div>
+
+      <div class="who-card fu" onclick="toggleWho(this)" style="border-radius:12px;border:2px solid var(--cream-dd);padding:36px 28px;background:var(--white);transition:all .3s;position:relative;overflow:hidden">
+        <div class="who-n" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">02 — Planning</div>
+        <h3 style="font-size:18px;color:var(--green);margin-bottom:12px;line-height:1.35">You have decided. Now you need to do it properly.</h3>
+        <p style="font-size:14px;color:var(--soft);line-height:1.75;margin-bottom:0">The right neighbourhood, the right property, the right sequence — with someone who handles the parts you cannot do from the UK.</p>
+        <div class="who-expand" style="max-height:0;overflow:hidden;transition:max-height .35s ease">
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+            <div style="font-size:12.5px;color:var(--gold);font-weight:500;margin-bottom:8px">Best starting point</div>
+            <div style="font-size:13.5px;color:var(--soft);line-height:1.7">The Madinah Blueprint — full pre-arrival setup, property scouted, everything in place before you land.</div>
+            <a href="#packages" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--green);font-weight:500;text-decoration:underline;text-underline-offset:3px">See the package →</a>
+          </div>
+        </div>
+        <div style="margin-top:16px;font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.04em">Tap to see what fits ↓</div>
+      </div>
+
+      <div class="who-card fu" onclick="toggleWho(this)" style="border-radius:12px;border:2px solid var(--cream-dd);padding:36px 28px;background:var(--white);transition:all .3s;position:relative;overflow:hidden">
+        <div class="who-n" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px">03 — Ready to Leave</div>
+        <h3 style="font-size:18px;color:var(--green);margin-bottom:12px;line-height:1.35">Decision made. You need the full picture handled.</h3>
+        <p style="font-size:14px;color:var(--soft);line-height:1.75;margin-bottom:0">Iqama facilitation, furnished setup, six months of ongoing support. Nothing left to figure out alone.</p>
+        <div class="who-expand" style="max-height:0;overflow:hidden;transition:max-height .35s ease">
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+            <div style="font-size:12.5px;color:var(--gold);font-weight:500;margin-bottom:8px">Best starting point</div>
+            <div style="font-size:13.5px;color:var(--soft);line-height:1.7">The Full Landing — complete A to Z, including Iqama facilitation and six months of support after arrival.</div>
+            <a href="#packages" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--green);font-weight:500;text-decoration:underline;text-underline-offset:3px">See the package →</a>
+          </div>
+        </div>
+        <div style="margin-top:16px;font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.04em">Tap to see what fits ↓</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Packages ───────────────────────────────────────────────────── -->
+<section class="packages" id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Hijrah Facilitation Packages</span>
+      <h2>Built for exactly where you are.</h2>
+      <p>Three packages. Different things for different moments in your journey. Start where you are.</p>
+    </div>
+    <div class="pkg-grid">
+
+      <!-- T1 -->
+      <div class="pkg fu">
+        <div class="pkg-tier">Tier One</div>
+        <div class="pkg-name">The Hijrah Compass</div>
+        <div class="pkg-sub">Four sessions. One month. Confusion to clarity.</div>
+        <div class="pkg-price">£299</div>
+        <div class="pkg-price-note">Four sessions over one month · Video call</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-inc-label">Includes</div>
+        <ul class="pkg-list">
+          <li>Honest pros and cons of hijrah — and whether it is right for you</li>
+          <li>Is Madinah the right city for you? Honest, specific answer</li>
+          <li>Financial Readiness Assessment — cost of living, runway, budget</li>
+          <li>The first months honestly — the adjustment, the struggles, how people stay</li>
+          <li>Real insight on what the first year looks like — the adjustment, the wins, the hard parts</li>
+        </ul>
+        <a href="https://instagram.com/alnomaad" class="pkg-btn pkg-btn-ol" target="_blank" rel="noopener">Book a Consultation</a>
+      </div>
+
+      <!-- T2 -->
+      <div class="pkg feat fu">
+        <div class="feat-tag">Most Complete Pre-Arrival</div>
+        <div class="pkg-tier">Tier Two</div>
+        <div class="pkg-name">The Madinah Blueprint</div>
+        <div class="pkg-sub">Moving in the next 3–6 months. Everything in place before you arrive.</div>
+        <div class="pkg-price">£999</div>
+        <div class="pkg-price-note">Everything in Tier One, plus full pre-arrival setup</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-inc-label">Everything in Tier One, plus</div>
+        <ul class="pkg-list">
+          <li>Month-by-month written action plan, specific to Madinah</li>
+          <li>Neighbourhood scouted on the ground — Haram distance timed</li>
+          <li>Full property inspection — 90+ checkpoints, video, written report</li>
+          <li>Active property search on Aqar and local channels</li>
+          <li>Landlord negotiation and translation — Hassan handles it directly</li>
+          <li>Warm introductions to British Muslim families in Madinah</li>
+          <li>Move-in checklist and airport welcome transfer</li>
+        </ul>
+        <a href="https://instagram.com/alnomaad" class="pkg-btn pkg-btn-solid" target="_blank" rel="noopener">Book a Consultation</a>
+      </div>
+
+      <!-- T3 -->
+      <div class="pkg fu">
+        <div class="pkg-tier">Tier Three</div>
+        <div class="pkg-name">The Full Landing</div>
+        <div class="pkg-sub">Leaving for good. Full A to Z — Iqama facilitation included.</div>
+        <div class="pkg-price">£2,000</div>
+        <div class="pkg-price-note">Everything in Tier Two, plus Iqama route and 6-month support</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-inc-label">Everything in Tier Two, plus</div>
+        <ul class="pkg-list">
+          <li>Furnished property sourced, delivered, and set up before you arrive</li>
+          <li>SIM, internet, utilities — working on arrival</li>
+          <li>Al Rajhi bank account and Absher registration guided</li>
+          <li>Iqama facilitation — introduction to a trusted specialist on the ground</li>
+          <li>8-week follow-up: WhatsApp + weekly check-ins after arrival</li>
+          <li>Ongoing support while you settle — 24h WhatsApp access and monthly check-in calls for 6 months</li>
+        </ul>
+        <a href="https://instagram.com/alnomaad" class="pkg-btn pkg-btn-ol" target="_blank" rel="noopener">Book a Consultation</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Al-Nomaad Services ──────────────────────────────────────────── -->
+<section class="an-services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Individual Hijrah Services</span>
+      <h2>Individual services — need just one thing?</h2>
+      <p>Every service in the packages is available standalone. The bundle is always better value — individual services are for those who need exactly one thing.</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab on" data-tab="consult">Consultations</button>
+      <button class="tab" data-tab="property">Property &amp; On-Ground</button>
+      <button class="tab" data-tab="practical">Practical</button>
+    </div>
+
+    <div class="tbl-wrap">
+      <div class="tsec on" id="tab-consult">
+        <table>
+          <thead><tr><th>Service</th><th>What it covers</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Hijrah Discovery Call — 30 min</td><td>Entry point. Is this for you? Where are you in the journey?</td><td>£45</td></tr>
+            <tr><td>Hijrah Deep-Dive Consultation — 75 min</td><td>Income, skills, family, realistic expectations — comprehensive</td><td>£95</td></tr>
+            <tr><td>Financial Readiness Assessment</td><td>Cost of living, monthly budget, runway breakdown</td><td>£75</td></tr>
+            <tr><td>Madinah Readiness Briefing — 60 min</td><td>Right area, Haram distances, visa vs Iqama route</td><td>£99</td></tr>
+            <tr><td>Month-by-Month Action Plan</td><td>Written roadmap from decision to arrival, Madinah-specific</td><td>£95</td></tr>
+          </tbody>
+        </table>
+        <div class="tbl-note">All consultations via video call. Sessions are personalised — not scripted.</div>
+      </div>
+
+      <div class="tsec" id="tab-property">
+        <table>
+          <thead><tr><th>Service</th><th>What it covers</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Area Inspection</td><td>Neighbourhood scouted — Haram distance timed, video report</td><td>£99</td></tr>
+            <tr><td>Property &amp; Area Inspection</td><td>40+ checkpoints, photos included, written report handed to you within 24–48 hours. 90-day guarantee.</td><td>£169</td></tr>
+            <tr><td>Two-Property Comparison</td><td>Both inspected. Clear recommendation with reasons.</td><td>£229</td></tr>
+            <tr><td>Property Search Support</td><td>Active search on Aqar and local channels</td><td>£99</td></tr>
+            <tr><td>Landlord Liaison &amp; Translation</td><td>All negotiation and communication handled directly</td><td>£149</td></tr>
+            <tr><td>Furnished Property Setup</td><td>Sourced, delivered, and set up to move-in standard</td><td>£299</td></tr>
+            <tr><td>Essential Kit Sourcing</td><td>Linen, kitchen, appliances — ready before you arrive</td><td>£149</td></tr>
+          </tbody>
+        </table>
+        <div class="tbl-note">90-day confidence guarantee on all property inspections — full refund + next report free if a major issue is missed.</div>
+      </div>
+
+      <div class="tsec" id="tab-practical">
+        <table>
+          <thead><tr><th>Service</th><th>What it covers</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Airport Welcome &amp; Transfer — both ways</td><td>Met at arrivals, transferred to accommodation and back</td><td>£100</td></tr>
+            <tr><td>Airport Welcome &amp; Transfer — one way</td><td>Arrival or departure only</td><td>£65</td></tr>
+          </tbody>
+        </table>
+        <div class="tbl-note">All practical services are for Madinah Al-Munawwarah.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ──────────────────────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-name">Al-Nomaad</div>
+        <div class="about-role">British Muslim · Permanently settled in Madinah Al-Munawwarah</div>
+        <div class="cred-grid">
+          <div class="cred"><span>🕌</span>Permanently based in Madinah Al-Munawwarah</div>
+          <div class="cred"><span>🇬🇧</span>Built by and for British Muslims — from someone who has made this move</div>
+          <div class="cred"><span>🏠</span>On-ground property inspection and neighbourhood scouting</div>
+          <div class="cred"><span>📞</span>One point of contact — no team, no handoffs, no support tickets</div>
+        </div>
+      </div>
+      <div>
+        <span class="label">Who You Are Working With</span>
+        <h2>One point of contact. Every step of the move handled directly.</h2>
+        <p>Al-Nomaad is not an agency. It is a single consultancy — built by a British Muslim who made hijrah to Madinah, built a life there, and now helps others do the same.</p>
+        <p>When you book a consultation, you speak directly with Al-Nomaad. When your property is inspected, it is done on the ground. When your landlord is negotiated with, it is handled directly. <strong>When you land at the airport, Al-Nomaad meets you.</strong></p>
+        <p>A genuine British Muslim expat community — real families, real connections — becomes yours from the day you arrive. Not links to public WhatsApp groups.</p>
+        <a href="https://wa.me/966557910005" class="btn btn-green" style="margin-top:8px" target="_blank" rel="noopener">
+          Book a Consultation
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Process ────────────────────────────────────────────────────── -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">How It Works</span>
+      <h2>Three steps from first message to moving forward.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="proc fu">
+        <div class="proc-n">01</div>
+        <h4>You reach out</h4>
+        <p>Book a consultation via WhatsApp or Instagram. Every enquiry is answered personally within 2 hours — no automated replies, no team.</p>
+      </div>
+      <div class="proc fu">
+        <div class="proc-n">02</div>
+        <h4>A free 20-minute call</h4>
+        <p>A free 20-minute call to understand where you are. Which package fits, what to expect, and an honest answer on whether now is the right time.</p>
+      </div>
+      <div class="proc fu">
+        <div class="proc-n">03</div>
+        <h4>You decide at your pace</h4>
+        <p>Start with a single consultation, one service, or a full package. There is no pressure — only a clear next step for where you actually are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────────── -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Questions</span>
+      <h2>Honest answers.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this only for Madinah, or do you cover other cities? <div class="faq-ico"></div></div>
+        <div class="faq-a"><p>Al-Nomaad is built specifically for Madinah. Hassan lives there permanently, which is what makes on-ground services possible. Consultations can cover other cities and countries for context, but property work and practical services are Madinah-specific.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Not sure which package is right for me. <div class="faq-ico"></div></div>
+        <div class="faq-a"><p>Start with the free 20-minute planning call. Hassan asks where you are and tells you honestly which package — or individual service — fits. If none of them are right yet, he'll tell you that too.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does the property inspection cover? <div class="faq-ico"></div></div>
+        <div class="faq-a"><p>90+ checkpoints — all systems tested, full snagging, 40+ photos, narrated video walkthrough, written report with clear recommendation, and a 20-minute debrief call. All backed by the 90-day confidence guarantee.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I'm a sister moving alone. Is Al-Nomaad set up for that? <div class="faq-ico"></div></div>
+        <div class="faq-a"><p>Yes. The service is built for all British Muslims, including sisters. Community connections include families and sisters already settled in Madinah. Safety and suitability are part of every neighbourhood and property assessment.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I get help with the Iqama without Tier Three? <div class="faq-ico"></div></div>
+        <div class="faq-a"><p>Iqama facilitation is part of Tier Three. If you're not yet ready for the full package, the Iqama route can be discussed in a Madinah Readiness Briefing or any consultation session.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How quickly are property reports delivered? <div class="faq-ico"></div></div>
+        <div class="faq-a"><p>Property and Area Inspection: within 24 hours of the visit. Area-only: within 48 hours. DM <strong>SCOUT</strong> on Instagram for property-specific enquiries and current availability.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────────────── -->
+<section class="cta" id="cta-final">
+  <div class="wrap">
+    <h2>You have been thinking about this long enough. Take one step today.</h2>
+    <p>Book a consultation and receive a personal response within two hours. One conversation. One clear next step.</p>
+    <div class="cta-btns">
+      <a href="https://instagram.com/alnomaad" class="btn-white" target="_blank" rel="noopener">DM MOVE · @alnomaad</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <span class="logo">Al-Nomaad<span style="color:var(--gold)">.</span></span>
+        <p>Hijrah facilitation for British Muslims relocating to Madinah Al-Munawwarah. From the first question to the day you are settled.</p>
+        <div class="ft-contact">
+          Instagram: <a href="https://instagram.com/alnomaad" target="_blank" rel="noopener">@alnomaad</a>
+          &nbsp;·&nbsp;
+          WhatsApp: <a href="https://wa.me/966557910005" target="_blank" rel="noopener">+966 55 791 0005</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h5>Hijrah Packages</h5>
+        <ul>
+          <li><a href="#packages">The Hijrah Compass — £299</a></li>
+          <li><a href="#packages">The Madinah Blueprint — £999</a></li>
+          <li><a href="#packages">The Full Landing — £2,000</a></li>
+          <li><a href="#services">Individual Services</a></li>
+
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://instagram.com/alnomaad" target="_blank" rel="noopener">DM MOVE · @alnomaad</a></li>
+          <li><a href="https://nomaadtours.com" target="_blank" rel="noopener">Nomaad Tours ↗</a></li>
+          <li><a href="https://wa.me/966557910005" target="_blank" rel="noopener">WhatsApp Hassan</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2025 Al-Nomaad. All rights reserved.</span>
+      <span>Madinah Al-Munawwarah, Saudi Arabia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Scripts ───────────────────────────────────────────────────── -->
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 16), {passive:true});
+
+  // Mobile nav
+  const mobBtn = document.getElementById('mob-btn');
+  const navLinks = document.getElementById('nav-links');
+  mobBtn.addEventListener('click', () => navLinks.classList.toggle('mo'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('mo')));
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+      document.querySelectorAll('.tsec').forEach(x => x.classList.remove('on'));
+      t.classList.add('on');
+      document.getElementById('tab-' + t.dataset.tab).classList.add('on');
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Who cards toggle
+  function toggleWho(card) {
+    const expand = card.querySelector('.who-expand');
+    const hint = card.querySelector('[style*="Tap to see"]');
+    const isOpen = expand.style.maxHeight && expand.style.maxHeight !== '0px';
+    document.querySelectorAll('.who-card').forEach(c => {
+      c.querySelector('.who-expand').style.maxHeight = '0px';
+      c.style.borderColor = 'var(--cream-dd)';
+      c.style.background = 'var(--white)';
+      const h = c.querySelector('[style*="Tap to see"]');
+      if(h) h.textContent = 'Tap to see what fits ↓';
+    });
+    if (!isOpen) {
+      expand.style.maxHeight = '200px';
+      card.style.borderColor = 'var(--gold)';
+      card.style.background = '#fdf9f4';
+      if(hint) hint.textContent = 'Tap to close ↑';
+    }
+  }
+
+  // Scroll fade
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
