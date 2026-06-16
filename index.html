@@ -375,6 +375,13 @@
       .hero-inner{gap:44px}
       .story-grid,.about-grid{gap:48px}
     }
+    /* Tablet: hero stacks — card still visible below text */
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;gap:36px}
+      .hero h1{max-width:100%}
+      .hero p{max-width:100%}
+      .hero-card{display:block;animation:none}
+    }
     @media(max-width:768px){
       /* Base */
       section{padding:60px 0}
@@ -389,12 +396,11 @@
       .nav-links.mo a{display:block;padding:13px 0;font-size:15px;border:none!important;border-radius:0!important;background:none!important;box-shadow:none!important;color:var(--green)!important}
       .nav-links.mo .nav-cta{margin-top:14px;display:block;text-align:center;padding:13px;border-radius:6px;background:var(--gold)!important;color:#fff!important}
 
-      /* Hero */
-      .hero-inner{grid-template-columns:1fr}
-      .hero-card{display:none}
-      .scroll-cue{display:none}
+      /* Hero — card still shows (stacked), hidden only on phones below */
+      .hero-inner{grid-template-columns:1fr;gap:32px}
       .hero-dome{display:none}
-      .hero h1{max-width:100%;font-size:clamp(38px,9vw,56px)}
+      .scroll-cue{display:none}
+      .hero h1{max-width:100%;font-size:clamp(36px,9vw,54px)}
       .hero p{max-width:100%;font-size:15px}
 
       /* Grids → single column */
@@ -406,15 +412,17 @@
       .journey-section{padding:32px 18px 36px;margin-bottom:40px;border-radius:14px}
       .journey-intro{margin-bottom:32px}
       .journey-intro h3{font-size:clamp(22px,5.5vw,30px)}
+      /* Timeline: stays horizontal, scrollable */
       .tl-rail{display:none}
-      .tl-track{flex-direction:column;gap:0}
-      .tl-stop{flex-direction:row;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center;border-radius:0;margin-top:0;transform:none!important}
-      .tl-stop:last-child{border-bottom:none}
-      .tl-dot{margin-bottom:0;flex-shrink:0;width:42px;height:42px}
-      .tl-stop:last-child .tl-dot{width:48px;height:48px}
-      .tl-year,.tl-year.soft{text-align:left;font-size:16px}
-      .tl-stop:last-child .tl-year{font-size:18px}
-      .tl-caption,.tl-caption.warm{text-align:left;max-width:none;flex:1}
+      .tl-track{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px;gap:0}
+      .tl-stop{flex:0 0 108px;min-width:100px;padding:12px 4px 10px;margin-top:0}
+      .tl-dot{width:44px;height:44px}
+      .tl-stop:last-child .tl-dot{width:52px;height:52px}
+      .tl-year{font-size:15px}
+      .tl-year.soft{font-size:14px}
+      .tl-stop:last-child .tl-year{font-size:17px}
+      .tl-caption{font-size:11.5px;max-width:90px}
+      .tl-caption.warm{font-size:12px;max-width:90px}
 
       /* Foundation facts */
       .found-n{font-size:60px}
@@ -474,6 +482,11 @@
       .sec-head h2{font-size:clamp(26px,7vw,38px)}
       .sec-head p{font-size:15px}
     }
+    /* Phones: hide hero card to save vertical space */
+    @media(max-width:580px){
+      .hero-card{display:none}
+      .hero{padding-bottom:48px}
+    }
     @media(max-width:480px){
       .wrap,.wrap--sm{padding:0 16px}
       .cred-grid{grid-template-columns:1fr}
@@ -485,7 +498,7 @@
       .pkg{padding:24px 16px}
       .story-panel{padding:22px 18px}
       .journey-section{padding:26px 14px 30px}
-      .hero h1{font-size:clamp(36px,9.5vw,52px)}
+      .hero h1{font-size:clamp(34px,9.5vw,50px)}
     }
   </style>
 </head>
