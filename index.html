@@ -198,29 +198,16 @@
     .how-step-d{font-size:14px;color:rgba(250,247,242,.6);line-height:1.75}
 
     /* ── Testimonials ── */
-    .tst{background:var(--green);padding:0}
-    .tst-head-row{padding:64px 0 44px;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2px}
-    .tst-head-left .label{color:var(--gold-l);display:block;margin-bottom:14px}
-    .tst-head-left h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,3.2vw,38px);color:var(--cream);font-weight:600;max-width:500px;line-height:1.2}
-    .tst-counter{text-align:right;flex-shrink:0;margin-left:40px}
-    .tst-counter-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:64px;color:rgba(184,147,106,.28);line-height:1;font-weight:600}
-    .tst-counter-l{font-size:10px;color:rgba(250,247,242,.22);letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
-    .tst-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:2px}
-    .tst-feat{background:rgba(255,255,255,.06);padding:56px 52px;position:relative;overflow:hidden;border-top:3px solid var(--gold)}
-    .tst-feat::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 0% 100%,rgba(184,147,106,.1) 0%,transparent 65%);pointer-events:none}
-    .tst-qdeco{font-family:'Cormorant Garamond',Georgia,serif;font-size:280px;color:var(--gold);opacity:.07;line-height:.8;position:absolute;top:-12px;left:6px;pointer-events:none;user-select:none;font-weight:600;font-style:italic;z-index:0}
-    .tst-feat-q{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(19px,2.2vw,25px);color:var(--cream);font-style:italic;line-height:1.65;margin-bottom:40px;position:relative;z-index:1}
-    .tst-feat-auth{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;align-items:center;gap:14px}
-    .tst-feat-pin{width:32px;height:32px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .tst-feat-pin svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:1.8}
-    .tst-stack{display:flex;flex-direction:column;gap:2px}
-    .tst-sm{background:rgba(255,255,255,.03);padding:40px 36px;flex:1;position:relative;overflow:hidden;border-top:3px solid rgba(184,147,106,.22);transition:background .25s}
-    .tst-sm:hover{background:rgba(255,255,255,.055)}
-    .tst-sm-deco{font-family:'Cormorant Garamond',Georgia,serif;font-size:80px;color:var(--gold);opacity:.18;line-height:1;position:absolute;top:8px;left:18px;pointer-events:none;user-select:none;font-weight:600;font-style:italic}
-    .tst-sm-q{font-size:14px;color:rgba(250,247,242,.65);line-height:1.85;font-style:italic;margin-bottom:22px;padding-top:34px;position:relative;z-index:1}
-    .tst-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;color:var(--cream);font-weight:600;margin-bottom:3px}
-    .tst-detail{font-size:10px;color:rgba(250,247,242,.35);letter-spacing:.09em;text-transform:uppercase;font-weight:600}
-    .tst-trust{padding:20px 0;border-top:1px solid rgba(255,255,255,.06);margin-top:2px;text-align:center;font-size:10px;color:rgba(250,247,242,.2);letter-spacing:.16em;text-transform:uppercase}
+    .tst{background:var(--white);padding:76px 0}
+    .tst .sec-head h2{color:var(--green)}
+    .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .tst-card{background:var(--cream);padding:44px 36px;position:relative;overflow:hidden;border-top:3px solid var(--gold);display:flex;flex-direction:column}
+    .tst-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:110px;color:var(--gold);opacity:.08;line-height:1;position:absolute;top:-4px;right:14px;font-weight:600;pointer-events:none;user-select:none}
+    .tst-q{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(16px,1.5vw,19px);color:var(--text);font-style:italic;line-height:1.8;flex:1;margin-bottom:28px;position:relative;z-index:1}
+    .tst-div{height:1px;background:var(--border);margin-bottom:18px}
+    .tst-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;color:var(--green);font-weight:600;margin-bottom:3px}
+    .tst-detail{font-size:10px;color:var(--gold-d);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+    .tst-trust{margin-top:32px;text-align:center;font-size:11px;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase}
 
     /* ── FAQ ── */
     .faq{background:var(--cream)}
@@ -375,9 +362,7 @@
       .tst-layout{grid-template-columns:1fr}
       .tst-featured{padding:36px 28px}
       .tst-big-q{font-size:120px}
-      .tst-layout{grid-template-columns:1fr}
-      .tst-feat{padding:40px 28px}
-      .tst-sm{padding:32px 28px}
+      .tst-grid{grid-template-columns:1fr}
       .tl-intro{padding:48px 0 36px;margin-bottom:36px}
       .tl-rail{display:none}
       .tl-track{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:0;padding-bottom:8px}
@@ -789,7 +774,6 @@
         <div class="bnd-name">Search + Inspection Bundle</div>
         <div class="bnd-sub">Property found, scouted, and reported — before you commit.</div>
         <div class="bnd-price">£249</div>
-        <div class="bnd-save">Individual services: £268 · You save £19</div>
         <div class="bnd-div"></div>
         <div class="bnd-inc">Includes</div>
         <ul class="bnd-list">
@@ -804,10 +788,10 @@
         <div class="bnd-name">The Property Package</div>
         <div class="bnd-sub">Search, inspect, and negotiate — everything handled until it is signed.</div>
         <div class="bnd-price">£349</div>
-        <div class="bnd-save">Individual services: £423 · You save £74</div>
         <div class="bnd-div"></div>
-        <div class="bnd-inc">Everything in Bundle One, plus</div>
+        <div class="bnd-inc">Includes</div>
         <ul class="bnd-list">
+          <li>Everything in Bundle One</li>
           <li>Landlord negotiation and translation — handled face to face in Madinah</li>
         </ul>
         <button class="bnd-btn" onclick="openModal('other')">Book this bundle &nbsp;→</button>
@@ -944,44 +928,36 @@
 <!-- ── Testimonials ── -->
 <section class="tst" id="testimonials">
   <div class="wrap">
-    <div class="tst-head-row reveal">
-      <div class="tst-head-left">
-        <span class="label">What clients say</span>
-        <h2>The move changed everything.<br>Here is how they describe it.</h2>
-      </div>
-      <div class="tst-counter">
-        <div class="tst-counter-n">3</div>
-        <div class="tst-counter-l">Permanent relocations</div>
-      </div>
+    <div class="sec-head reveal">
+      <span class="label">Testimonials</span>
+      <h2>From people who made the move.</h2>
     </div>
-    <div class="tst-layout">
-      <div class="tst-feat reveal-l">
-        <div class="tst-qdeco">"</div>
-        <blockquote class="tst-feat-q">I was paying £2,200 a month in London. In Madinah I paid £450 for a bigger flat, five minutes from the Haram. That number made the decision for me — not the lectures, not the reminders. Just the number.</blockquote>
-        <div class="tst-feat-auth">
-          <div class="tst-feat-pin">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <div class="tst-name">Umm Ibrahim</div>
-            <div class="tst-detail">London → Madinah · 2024</div>
-          </div>
-        </div>
+    <div class="tst-grid stagger">
+
+      <div class="tst-card reveal">
+        <div class="tst-num">01</div>
+        <blockquote class="tst-q">I was paying £2,200 a month in London. In Madinah I paid £450 for a bigger flat, five minutes from the Haram. That number made the decision — not the lectures, not the reminders. Just the number.</blockquote>
+        <div class="tst-div"></div>
+        <div class="tst-name">Umm Ibrahim</div>
+        <div class="tst-detail">London → Madinah · 2024</div>
       </div>
-      <div class="tst-stack stagger">
-        <div class="tst-sm reveal-r">
-          <div class="tst-sm-deco">"</div>
-          <blockquote class="tst-sm-q">I told him I was nervous about the landlord. He went in person, spoke to him in Arabic, came back and said "sign it." No back and forth, no second-guessing from abroad. I trusted it.</blockquote>
-          <div class="tst-name">Abu Anas</div>
-          <div class="tst-detail">Manchester → Madinah · 2023</div>
-        </div>
-        <div class="tst-sm reveal-r">
-          <div class="tst-sm-deco">"</div>
-          <blockquote class="tst-sm-q">I moved with three kids and no Arabic. He had someone at arrivals, the flat was clean, the SIM was in the door. I cried when I walked in. That is not something an agency does.</blockquote>
-          <div class="tst-name">Khadija M.</div>
-          <div class="tst-detail">Birmingham → Madinah · 2024</div>
-        </div>
+
+      <div class="tst-card reveal">
+        <div class="tst-num">02</div>
+        <blockquote class="tst-q">I told him I was nervous about the landlord. He went in person, spoke to him in Arabic, came back and said "sign it." No back and forth, no second-guessing from abroad. I trusted it completely.</blockquote>
+        <div class="tst-div"></div>
+        <div class="tst-name">Abu Anas</div>
+        <div class="tst-detail">Manchester → Madinah · 2023</div>
       </div>
+
+      <div class="tst-card reveal">
+        <div class="tst-num">03</div>
+        <blockquote class="tst-q">I moved with three kids and no Arabic. He had someone at arrivals, the flat was clean, the SIM was in the door. I cried when I walked in. That is not something an agency does.</blockquote>
+        <div class="tst-div"></div>
+        <div class="tst-name">Khadija M.</div>
+        <div class="tst-detail">Birmingham → Madinah · 2024</div>
+      </div>
+
     </div>
     <div class="tst-trust">All clients relocated permanently to Madinah Al-Munawwarah</div>
   </div>
