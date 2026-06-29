@@ -780,7 +780,7 @@
           <li>Active property search on Aqar and local channels — shortlist delivered</li>
           <li>Full property inspection — 40+ checkpoints, photos, written report within 48 hrs</li>
         </ul>
-        <button class="bnd-btn" onclick="openModal('other')">Book this bundle &nbsp;→</button>
+        <button class="bnd-btn" onclick="openModal('bundle1')">Book this bundle &nbsp;→</button>
       </div>
 
       <div class="bnd feat reveal">
@@ -794,7 +794,7 @@
           <li>Everything in Bundle One</li>
           <li>Landlord negotiation and translation — handled face to face in Madinah</li>
         </ul>
-        <button class="bnd-btn" onclick="openModal('other')">Book this bundle &nbsp;→</button>
+        <button class="bnd-btn" onclick="openModal('bundle2')">Book this bundle &nbsp;→</button>
       </div>
 
     </div>
@@ -1099,6 +1099,10 @@
                 <option value="blueprint">The Madinah Blueprint — £1,199</option>
                 <option value="landing">The Full Landing — £2,000</option>
               </optgroup>
+              <optgroup label="Property Bundles">
+                <option value="bundle1">Search + Inspection Bundle — £249</option>
+                <option value="bundle2">The Property Package — £349</option>
+              </optgroup>
               <optgroup label="Consultations">
                 <option value="clarity">Hijrah Discovery Call — £45</option>
                 <option value="deepdive">Hijrah Deep-Dive Consultation — £95</option>
@@ -1114,9 +1118,7 @@
                 <option value="search">Property Search Support — £99</option>
                 <option value="liaison">Landlord Liaison & Translation — £155</option>
                 <option value="furnished">Furnished Property Setup — £299</option>
-                <option value="kit">Essential Kit Sourcing — £149</option>
-                <option value="airport1">Airport Transfer — One Way — £65</option>
-                <option value="airport2">Airport Transfer — Both Ways — £100</option>
+                <option value="airport1">Airport Welcome & Transfer — £65</option>
               </optgroup>
               <option value="unsure">Not sure yet</option>
             </select>
@@ -1213,7 +1215,8 @@
     if (preset) {
       const svc = document.getElementById('bf-service');
       const map = {
-        clarity:'clarity', compass:'compass', blueprint:'blueprint', landing:'landing', other:'unsure'
+        clarity:'clarity', compass:'compass', blueprint:'blueprint', landing:'landing',
+        bundle1:'bundle1', bundle2:'bundle2', other:'unsure'
       };
       if (svc && map[preset]) svc.value = map[preset];
     }
