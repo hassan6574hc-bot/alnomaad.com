@@ -121,6 +121,31 @@
     .pkg-btn-ol{background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--cream)}.pkg-btn-ol:hover{border-color:var(--gold);color:var(--gold-l);background:rgba(184,147,106,.08)}
     .pkg-btn-solid{background:var(--gold);color:#fff}.pkg-btn-solid:hover{background:var(--gold-l);transform:translateY(-1px)}
 
+    /* ── Property Bundles ── */
+    .bundles{background:var(--off)}
+    .bundles .sec-head h2{color:var(--green)}
+    .bundles .sec-head p{color:var(--text-3)}
+    .bnd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+    .bnd{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--border);padding:40px 36px;display:flex;flex-direction:column;transition:border-top-color .25s}
+    .bnd:hover,.bnd.feat{border-top-color:var(--gold)}
+    .bnd-tag{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+    .bnd-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;color:var(--green);font-weight:600;margin-bottom:6px}
+    .bnd-sub{font-size:13px;color:var(--text-3);margin-bottom:24px;line-height:1.55;font-style:italic}
+    .bnd-price{font-family:'Inter',sans-serif;font-size:36px;color:var(--green);line-height:1;font-weight:700;margin-bottom:4px;letter-spacing:-.02em}
+    .bnd-save{font-size:12px;color:var(--gold-d);font-weight:600;margin-bottom:24px}
+    .bnd-div{height:1px;background:var(--border);margin-bottom:22px}
+    .bnd-inc{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px}
+    .bnd-list{list-style:none;flex:1;margin-bottom:28px}
+    .bnd-list li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text-2);padding:8px 0;border-bottom:1px solid var(--border);line-height:1.5}
+    .bnd-list li:last-child{border-bottom:none}
+    .bnd-list li::before{content:'✦';color:var(--gold);font-size:8px;margin-top:4px;flex-shrink:0}
+    .bnd-btn{display:block;text-align:center;padding:13px;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;margin-top:auto;border:none;background:var(--green);color:var(--cream)}
+    .bnd-btn:hover{background:var(--green-m);transform:translateY(-1px)}
+    .credit-note{margin-top:32px;padding:16px 24px;font-size:13px;text-align:center;border-left:3px solid var(--gold)}
+    .credit-note-dark{background:rgba(255,255,255,.04);color:rgba(250,247,242,.55)}
+    .credit-note-light{background:var(--white);color:var(--text-3);border:1px solid var(--border);border-left:3px solid var(--gold)}
+    .credit-note strong{font-weight:600}
+
     /* ── Individual Services ── */
     .services{background:var(--cream)}
     .svc-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid var(--border)}
@@ -399,6 +424,7 @@
       <li><a href="#story">Story</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#packages">Packages</a></li>
+      <li><a href="#bundles">Bundles</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="https://topmate.io/awadthenomad" class="nav-cta">Book a Consultation</a></li>
@@ -744,6 +770,51 @@
 
     </div>
     <p style="text-align:center;margin-top:36px;font-size:14px;color:rgba(250,247,242,.5)">Not sure which package? <a href="#cta" style="color:var(--gold-l);font-weight:600;text-decoration:underline;text-underline-offset:3px">Book a free 30-minute clarity call →</a></p>
+    <div class="credit-note credit-note-dark">The <strong>£45 Discovery Call</strong> is credited in full against any package or bundle you go on to book.</div>
+  </div>
+</section>
+
+<!-- ── Property Bundles ── -->
+<section class="bundles" id="bundles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">Property Bundles</span>
+      <h2>Just the property side? These are for you.</h2>
+      <p>Two focused bundles for those who only need help on the ground in Madinah — finding the right property and getting it locked in.</p>
+    </div>
+    <div class="bnd-grid stagger">
+
+      <div class="bnd reveal">
+        <div class="bnd-tag">Bundle One</div>
+        <div class="bnd-name">Search + Inspection Bundle</div>
+        <div class="bnd-sub">Property found, scouted, and reported — before you commit.</div>
+        <div class="bnd-price">£249</div>
+        <div class="bnd-save">Individual services: £268 · You save £19</div>
+        <div class="bnd-div"></div>
+        <div class="bnd-inc">Includes</div>
+        <ul class="bnd-list">
+          <li>Active property search on Aqar and local channels — shortlist delivered</li>
+          <li>Full property inspection — 40+ checkpoints, photos, written report within 48 hrs</li>
+        </ul>
+        <button class="bnd-btn" onclick="openModal('other')">Book this bundle &nbsp;→</button>
+      </div>
+
+      <div class="bnd feat reveal">
+        <div class="bnd-tag">Bundle Two</div>
+        <div class="bnd-name">The Property Package</div>
+        <div class="bnd-sub">Search, inspect, and negotiate — everything handled until it is signed.</div>
+        <div class="bnd-price">£349</div>
+        <div class="bnd-save">Individual services: £423 · You save £74</div>
+        <div class="bnd-div"></div>
+        <div class="bnd-inc">Everything in Bundle One, plus</div>
+        <ul class="bnd-list">
+          <li>Landlord negotiation and translation — handled face to face in Madinah</li>
+        </ul>
+        <button class="bnd-btn" onclick="openModal('other')">Book this bundle &nbsp;→</button>
+      </div>
+
+    </div>
+    <div class="credit-note credit-note-light">The <strong>£45 Discovery Call</strong> is credited in full against any package or bundle you go on to book.</div>
   </div>
 </section>
 
@@ -850,19 +921,9 @@
               <td>£299</td>
             </tr>
             <tr>
-              <td>Essential Kit Sourcing</td>
-              <td>Kitchen, bedding, and household essentials sourced and delivered</td>
-              <td>£149</td>
-            </tr>
-            <tr>
-              <td>Airport Welcome & Transfer — one way</td>
+              <td>Airport Welcome & Transfer</td>
               <td>Meet at airport, transfer to your property</td>
               <td>£65</td>
-            </tr>
-            <tr>
-              <td>Airport Welcome & Transfer — both ways</td>
-              <td>Arrival and departure transfers</td>
-              <td>£100</td>
             </tr>
           </tbody>
         </table>
@@ -930,10 +991,14 @@
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label">Questions</span>
-      <h2>Honest answers.</h2>
+      <span class="label">FAQ</span>
+      <h2>Frequently Asked Questions.</h2>
     </div>
     <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Does the £45 Discovery Call count toward a package or bundle?<div class="faq-ico"></div></div>
+        <div class="faq-a"><p>Yes. The £45 is credited in full against any package or bundle you book afterward. If you go on to book the Hijrah Compass, the Madinah Blueprint, the Full Landing, or either Property Bundle, the £45 comes off the total. You pay for the call, not twice.</p></div>
+      </div>
       <div class="faq-item">
         <div class="faq-q">Is this only for Madinah, or do you cover other cities?<div class="faq-ico"></div></div>
         <div class="faq-a"><p>Al-Nomaad is built specifically for Madinah. It is where the consultancy is permanently based, which is what makes on-ground services possible. Consultations can cover other cities for context, but property work and practical services are Madinah-specific.</p></div>
