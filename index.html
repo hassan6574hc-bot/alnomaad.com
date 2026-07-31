@@ -710,7 +710,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
     <li><a href="#services">Property &amp; Support</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <button class="nav-cta" onclick="openModal('clarity')">Book a Discovery Call</button>
+  <button class="nav-cta" onclick="openLeadModal()">Book a Discovery Call</button>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -728,7 +728,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
         <div class="glow-sub">We plan it around your life — your finances, your family, your timeline. Guidance from someone who made the mistakes so you don't have to.</div>
       </div>
       <div class="hero-actions reveal">
-        <button class="btn-primary" onclick="openModal('clarity')">Book Your Discovery Call</button>
+        <button class="btn-primary" onclick="openLeadModal()">Book Your Discovery Call</button>
         <a href="#story" class="btn-ghost">What makes Al-Nomaad different? →</a>
       </div>
     </div>
@@ -1111,7 +1111,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
               <li>Active property search on Aqar and local channels — shortlist delivered</li>
               <li>Full property inspection — 40+ checkpoints, photos, written report within 48 hrs</li>
             </ul>
-            <button class="bnd-btn" onclick="openModal('bundle1')">Book this bundle →</button>
+            <button class="bnd-btn" onclick="openLeadModal()">Book this bundle →</button>
           </div>
           <div class="bnd-card feat reveal">
             <div class="prop-num-badge">2</div>
@@ -1124,7 +1124,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
               <li>Everything in Bundle One</li>
               <li>Landlord negotiation and translation — handled face to face in Madinah</li>
             </ul>
-            <button class="bnd-btn" onclick="openModal('bundle2')">Book this bundle →</button>
+            <button class="bnd-btn" onclick="openLeadModal()">Book this bundle →</button>
           </div>
         </div>
         <div class="credit-note">Your <strong>Discovery Call</strong> fee is credited in full toward any package or bundle priced over £150.</div>
@@ -1181,7 +1181,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
           </div>
         </div>
         <div class="reveal" style="margin-top:1.5rem;">
-          <button class="bnd-btn" onclick="openModal('clarity')">Book an individual service →</button>
+          <button class="bnd-btn" onclick="openLeadModal()">Book an individual service →</button>
         </div>
       </div>
 
@@ -1309,7 +1309,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
     <div class="dc-label-rule reveal"></div>
     <h2 class="dc-title reveal">Thirty minutes.<br>No commitment. Real answers.</h2>
     <p class="dc-body reveal">One call with someone already living in Madinah — who will tell you exactly what your situation looks like, what the move actually costs, and whether you are ready.</p>
-    <button class="dc-btn reveal" onclick="openModal('clarity')">Book the Discovery Call →</button>
+    <button class="dc-btn reveal" onclick="openLeadModal()">Book the Discovery Call →</button>
     <p class="dc-meta">Video call · Personal response within 2 hours</p>
     <a href="https://wa.me/966557910005" target="_blank" rel="noopener" class="dc-wa">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1392,7 +1392,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
 
 <!-- MOBILE STICKY CTA -->
 <div class="mob-sticky" id="mob-sticky">
-  <button class="mob-sticky-btn" onclick="openModal('clarity')">Book a Discovery Call</button>
+  <button class="mob-sticky-btn" onclick="openLeadModal()">Book a Discovery Call</button>
   <a href="https://wa.me/966557910005" target="_blank" rel="noopener" class="mob-sticky-wa" aria-label="WhatsApp">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
@@ -1871,6 +1871,93 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
   }, {threshold: 0.2});
   if (heroEl) stickyObs.observe(heroEl);
   if (dcEl) stickyObs.observe(dcEl);
+
+  // ── Al-Nomaad lead capture modal ─────────────────────────────────────────
+  function openLeadModal(){
+    var o=document.getElementById('al-modal-overlay');
+    o.style.display='flex';
+    document.body.style.overflow='hidden';
+  }
+  function closeLeadModal(){
+    var o=document.getElementById('al-modal-overlay');
+    o.style.display='none';
+    document.body.style.overflow='';
+    document.getElementById('al-form-error').style.display='none';
+    var btn=document.getElementById('al-submit-btn');
+    btn.textContent='Book My Discovery Call →';
+    btn.disabled=false;
+  }
+  document.getElementById('al-modal-overlay').addEventListener('click',function(e){
+    if(e.target===this) closeLeadModal();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') closeLeadModal();
+  });
+  document.getElementById('al-lead-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('al-submit-btn');
+    var err=document.getElementById('al-form-error');
+    if(!this.checkValidity()){this.reportValidity();return;}
+    btn.textContent='Sending…';
+    btn.disabled=true;
+    err.style.display='none';
+    try{
+      var res=await fetch('https://formspree.io/f/mlgqkvoo',{
+        method:'POST',
+        body:new FormData(this),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        window.location.href='https://topmate.io/alnomaad';
+      } else {
+        throw new Error('failed');
+      }
+    } catch(ex){
+      err.style.display='block';
+      btn.textContent='Book My Discovery Call →';
+      btn.disabled=false;
+    }
+  });
 </script>
+
+<!-- LEAD CAPTURE MODAL -->
+<div id="al-modal-overlay" aria-modal="true" role="dialog" style="display:none;position:fixed;inset:0;background:rgba(8,28,24,0.90);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div id="al-modal" style="background:#faf7f2;max-width:460px;width:100%;border-radius:4px;overflow:hidden;position:relative;animation:alModalIn 0.22s ease;">
+    <div style="height:4px;background:#BB8744;"></div>
+    <div style="padding:2.25rem 2rem 2rem;">
+      <button onclick="closeLeadModal()" aria-label="Close" style="position:absolute;top:1.1rem;right:1.1rem;background:none;border:none;cursor:pointer;color:#0C3E36;font-size:1.5rem;line-height:1;opacity:0.5;">&times;</button>
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#BB8744;margin-bottom:0.6rem;">Al-Nomaad Hijrah Consultancy</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:#0C3E36;margin:0 0 0.4rem;line-height:1.3;">A few quick details</h3>
+      <p style="font-size:13px;color:#666;margin:0 0 1.6rem;line-height:1.6;">So we can make the most of your discovery call. No commitment — just a conversation.</p>
+      <form id="al-lead-form" novalidate>
+        <input type="hidden" name="_subject" value="New Al-Nomaad Discovery Call Enquiry">
+        <div style="display:grid;gap:0.9rem;margin-bottom:1.5rem;">
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0C3E36;margin-bottom:0.35rem;">Full Name *</label>
+            <input type="text" name="name" required placeholder="Your name" style="width:100%;border:1.5px solid #ccc;border-radius:3px;padding:10px 12px;font-size:14px;background:#fff;box-sizing:border-box;transition:border-color 0.2s;" onfocus="this.style.borderColor='#BB8744'" onblur="this.style.borderColor='#ccc'">
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0C3E36;margin-bottom:0.35rem;">Email *</label>
+            <input type="email" name="email" required placeholder="your@email.com" style="width:100%;border:1.5px solid #ccc;border-radius:3px;padding:10px 12px;font-size:14px;background:#fff;box-sizing:border-box;transition:border-color 0.2s;" onfocus="this.style.borderColor='#BB8744'" onblur="this.style.borderColor='#ccc'">
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0C3E36;margin-bottom:0.35rem;">Location / Country *</label>
+            <input type="text" name="location" required placeholder="e.g. United Kingdom" style="width:100%;border:1.5px solid #ccc;border-radius:3px;padding:10px 12px;font-size:14px;background:#fff;box-sizing:border-box;transition:border-color 0.2s;" onfocus="this.style.borderColor='#BB8744'" onblur="this.style.borderColor='#ccc'">
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0C3E36;margin-bottom:0.35rem;">WhatsApp Number *</label>
+            <input type="tel" name="whatsapp" required placeholder="+44 7XXX XXXXXX" style="width:100%;border:1.5px solid #ccc;border-radius:3px;padding:10px 12px;font-size:14px;background:#fff;box-sizing:border-box;transition:border-color 0.2s;" onfocus="this.style.borderColor='#BB8744'" onblur="this.style.borderColor='#ccc'">
+          </div>
+        </div>
+        <button type="submit" id="al-submit-btn" style="width:100%;background:#0C3E36;color:#F2CF8F;font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:15px;border:none;border-radius:3px;cursor:pointer;transition:background 0.2s;">Book My Discovery Call →</button>
+        <p style="text-align:center;font-size:11px;color:#999;margin:0.65rem 0 0;">After submitting you'll be taken to pick your time slot on Topmate.</p>
+        <div id="al-form-error" style="display:none;background:#fff0f0;border:1px solid #fbb;border-radius:3px;padding:0.75rem;margin-top:1rem;font-size:13px;color:#c00;text-align:center;">Something went wrong — please try again.</div>
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes alModalIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
 </body>
 </html>
