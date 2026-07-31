@@ -811,11 +811,12 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
 .nt-ad-right{width:240px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);border-left:1px solid rgba(187,135,68,0.2);padding:2rem 1.75rem;}
 .nt-ad-logo{width:210px;height:auto;opacity:1;display:block;}
 @media(max-width:700px){
-  .nt-ad{flex-direction:column;}
-  .nt-ad-left{padding:1.5rem 1.5rem 1rem;}
-  .nt-ad-right{width:100%;border-left:none;border-top:1px solid rgba(187,135,68,0.18);padding:1.25rem 1.5rem;}
-  .nt-ad-logo{width:140px;}
-  .nt-ad-title{font-size:1.5rem;}
+  .nt-ad{display:grid;grid-template-columns:1fr 110px;}
+  .nt-ad-left{padding:1.25rem 1rem 1.25rem;display:flex;flex-direction:column;justify-content:space-between;}
+  .nt-ad-right{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;width:auto;border-left:1px solid rgba(187,135,68,0.15);border-top:none;padding:0.75rem 0.5rem;background:rgba(255,255,255,0.04);}
+  .nt-ad-logo{width:90px;height:auto;display:block;}
+  .nt-ad-title{font-size:1.3rem;}
+  .nt-ad-desc{font-size:12.5px;margin-bottom:1rem;}
   .nt-ad-wrap{padding:1.25rem 1rem 1.5rem;}
   .nt-sec-sep{padding:0 1rem;}
 }
@@ -1370,7 +1371,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
   <div class="dc-inner">
     <div class="dc-label reveal">Not sure where to start?</div>
     <div class="dc-label-rule reveal"></div>
-    <h2 class="dc-title reveal">Thirty minutes.<br>No commitment. Real answers.</h2>
+    <h2 class="dc-title reveal">Thirty minutes.<br>Real answers.</h2>
     <p class="dc-body reveal">One call with someone already living in Madinah — who will tell you exactly what your situation looks like, what the move actually costs, and whether you are ready.</p>
     <button class="dc-btn reveal" onclick="openLeadModal()">Book the Discovery Call →</button>
     <p class="dc-meta">Video call · Personal response within 2 hours</p>
@@ -2002,7 +2003,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
       <button onclick="closeLeadModal()" aria-label="Close" style="position:absolute;top:1.1rem;right:1.1rem;background:none;border:none;cursor:pointer;color:#0C3E36;font-size:1.5rem;line-height:1;opacity:0.5;">&times;</button>
       <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#BB8744;margin-bottom:0.6rem;">Al-Nomaad Hijrah Consultancy</div>
       <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:#0C3E36;margin:0 0 0.4rem;line-height:1.3;">A few quick details</h3>
-      <p style="font-size:13px;color:#666;margin:0 0 1.6rem;line-height:1.6;">So we can make the most of your discovery call. No commitment — just a conversation.</p>
+      <p style="font-size:13px;color:#666;margin:0 0 1.6rem;line-height:1.6;">So we can make the most of your discovery call.</p>
       <form id="al-lead-form" novalidate>
         <input type="hidden" name="_subject" value="New Al-Nomaad Discovery Call Enquiry">
         <div style="display:grid;gap:0.9rem;margin-bottom:1.5rem;">
