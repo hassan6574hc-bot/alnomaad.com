@@ -698,7 +698,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
   <button class="snf-arrow" id="snf-down" title="Next stage" aria-label="Next stage">▼</button>
 </div>
 
-<div class="nt-bar"><a href="nomaadtours/">Also in Madinah — private experiences &amp; ziyarah tours: <strong>Nomaad Tours →</strong></a></div>
+
 <!-- TOP ANNOUNCEMENT BAR -->
 <a href="/nomaadtours" class="top-bar" aria-label="Explore Nomaad Tours">
   <span class="top-bar-eyebrow">New</span>
@@ -1317,6 +1317,7 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
 <div class="section-sep" aria-hidden="true" style="background:var(--white);"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="44" preserveAspectRatio="none" style="display:block;"><defs><pattern id="chev-d" x="0" y="0" width="24" height="14" patternUnits="userSpaceOnUse"><polyline points="0,7 6,0 12,7 18,0 24,7" fill="none" stroke="rgba(12,62,54,0.3)" stroke-width="1.2" stroke-linejoin="round"/><polyline points="0,14 6,7 12,14 18,7 24,14" fill="none" stroke="rgba(12,62,54,0.3)" stroke-width="1.2" stroke-linejoin="round"/></pattern></defs><rect width="100%" height="44" fill="url(#chev-d)"/></svg></div>
 
 <!-- DISCOVERY CTA -->
+<div class="dual-cta-wrap">
 <section class="discovery-cta" id="clarity">
   <div class="dc-inner">
     <div class="dc-label reveal">Not sure where to start?</div>
@@ -1331,6 +1332,19 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
     </a>
   </div>
 </section>
+
+<!-- NOMAAD TOURS CTA -->
+<section class="discovery-cta nt-tours-cta" id="nomaadtours-cta">
+  <div class="dc-inner">
+    <div class="dc-label reveal" style="color:var(--navy);">Visiting Madinah?</div>
+    <div class="dc-label-rule reveal" style="background:var(--navy);opacity:0.3;"></div>
+    <h2 class="dc-title reveal" style="color:var(--navy);">Private tours.<br>Sunnah only.<br>No strangers.</h2>
+    <p class="dc-body reveal" style="color:rgba(12,62,54,0.78);">A resident-led Madinah experience for your group. Every site narrated from Qur’an and sunnah — no folklore, no fabrications, no tour buses.</p>
+    <a href="/nomaadtours" class="dc-btn reveal nt-tours-btn">Explore Nomaad Tours →</a>
+    <p class="dc-meta" style="color:rgba(12,62,54,0.55);">Private group · One experience at a time</p>
+  </div>
+</section>
+</div>
 
 <!-- SECTION SEPARATOR -->
 <div class="section-sep" aria-hidden="true" style="background:var(--white);"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="44" preserveAspectRatio="none" style="display:block;"><defs><pattern id="chev-e" x="0" y="0" width="24" height="14" patternUnits="userSpaceOnUse"><polyline points="0,7 6,0 12,7 18,0 24,7" fill="none" stroke="rgba(12,62,54,0.3)" stroke-width="1.2" stroke-linejoin="round"/><polyline points="0,14 6,7 12,14 18,7 24,14" fill="none" stroke="rgba(12,62,54,0.3)" stroke-width="1.2" stroke-linejoin="round"/></pattern></defs><rect width="100%" height="44" fill="url(#chev-e)"/></svg></div>
@@ -1972,6 +1986,15 @@ body { font-family:'DM Sans',sans-serif; color:var(--text-dark); background:var(
 </div>
 <style>
 @keyframes alModalIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* DUAL CTA LAYOUT */
+.dual-cta-wrap{display:flex;align-items:stretch;}
+.dual-cta-wrap .discovery-cta{flex:1;padding:7rem 3.5rem;}
+.nt-tours-cta{background-color:#F2CF8F!important;background-image:none!important;border-top-color:var(--navy)!important;}
+.nt-tours-cta::before{display:none;}
+.nt-tours-btn{background:var(--navy)!important;color:var(--cream)!important;box-shadow:0 4px 18px rgba(12,62,54,0.25)!important;}
+.nt-tours-btn:hover{background:#0a3430!important;}
+@media(max-width:800px){.dual-cta-wrap{flex-direction:column;}.dual-cta-wrap .discovery-cta{padding:5rem 2rem;}}
 </style>
 </body>
 </html>
